@@ -1,0 +1,246 @@
+<?php
+
+namespace app\controllers;
+
+use Yii;
+use yii\filters\AccessControl;
+use yii\web\Controller;
+use yii\web\Response;
+use yii\filters\VerbFilter;
+use app\models\LoginForm;
+use app\models\ContactForm;
+
+class SiteController extends Controller
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::class,
+                'only' => ['logout'],
+                'rules' => [
+                    [
+                        'actions' => ['logout'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+            'verbs' => [
+                'class' => VerbFilter::class,
+                'actions' => [
+                    'logout' => ['post'],
+                ],
+            ],
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function actions()
+    {
+        return [
+            'error' => [
+                'class' => 'yii\web\ErrorAction',
+            ],
+            'captcha' => [
+                'class' => 'yii\captcha\CaptchaAction',
+                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
+            ],
+        ];
+    }
+
+    /**
+     * Displays homepage.
+     *
+     * @return string
+     */
+    public function actionIndex()
+    {
+        return $this->render('index');
+    }
+
+    public function actionGlavnaya()
+    {
+        return $this->render('glavnaya');
+    }
+    public function actionInterernaya()
+    {
+        return $this->render('interernaya');
+    }
+    public function actionKompleks()
+    {
+        return $this->render('kompleks');
+    }
+    public function actionMobileStends()
+    {
+        return $this->render('mobile-stends');
+    }
+    public function actionNakleyki()
+    {
+        return $this->render('nakleyki');
+    }
+    public function actionPechati()
+    {
+        return $this->render('pechati');
+    }
+    public function actionPoligrafiya()
+    {
+        return $this->render('poligrafiya');
+    }
+    public function actionShirokoformatnaya()
+    {
+        return $this->render('shirokoformatnaya');
+    }
+    public function actionSuvenir()
+    {
+        return $this->render('suvenir');
+    }
+    public function actionTablichki()
+    {
+        return $this->render('tablichki');
+    }
+    public function actionUslugiDes()
+    {
+        return $this->render('uslugi-des');
+    }
+    public function actionViveski()
+    {
+        return $this->render('viveski');
+    }
+
+    /**
+     * Login action.
+     *
+     * @return Response|string
+     */
+    public function actionLogin()
+    {
+        if (!Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+
+        $model = new LoginForm();
+        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            return $this->goBack();
+        }
+
+        $model->password = '';
+        return $this->render('login', [
+            'model' => $model,
+        ]);
+    }
+
+    /**
+     * Logout action.
+     *
+     * @return Response
+     */
+    public function actionLogout()
+    {
+        Yii::$app->user->logout();
+
+        return $this->goHome();
+    }
+
+    /**
+     * Displays contact page.
+     *
+     * @return Response|string
+     */
+    public function actionContact()
+    {
+        $model = new ContactForm();
+        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
+            Yii::$app->session->setFlash('contactFormSubmitted');
+
+            return $this->refresh();
+        }
+        return $this->render('contact', [
+            'model' => $model,
+        ]);
+    }
+
+    /**
+     * Displays about page.
+     *
+     * @return string
+     */
+    public function actionAbout()
+    {
+        return $this->render('about');
+    }
+
+    public function actionMail(){
+        $part = Yii::$app->request->post('part');
+        $density = Yii::$app->request->post('density');
+        $format = Yii::$app->request->post('format');
+        $circulation = Yii::$app->request->post('circulation');
+        $color = Yii::$app->request->post('color');
+        $postprint_drilling = Yii::$app->request->post('postprint_drilling');
+        $postprint_skr_corn = Yii::$app->request->post('postprint_skr_corn');
+        $postprint_lam_11 = Yii::$app->request->post('postprint_lam_11');
+        $postprint_perf = Yii::$app->request->post('postprint_perf');
+        $postprint_falc_auto = Yii::$app->request->post('postprint_falc_auto');
+        $postprint_big_hand = Yii::$app->request->post('postprint_big_hand');
+        $person_name = Yii::$app->request->post('person_name');
+        $person_nuumber = Yii::$app->request->post('person_nuumber');
+        $price = Yii::$app->request->post('price');
+        $html = '<table border="1">';
+        $html .= '<tr><td>имя</td><td>'. $person_name.'</td>';
+        $html .= '<tr><td>телефон</td><td>'. $person_nuumber.'</td>';
+        $html .= '<tr><td>тип продукции</td><td>'. $part.'</td>';
+        $html .= '<tr><td>Плотность бумаги</td><td>'. $density.'</td>';
+        $html .= '<tr><td>Формат продукции</td><td>'. $format.'</td>';
+        $html .= '<tr><td>Тираж в шт.</td><td>'. $circulation.'</td>';
+        $html .= '<tr><td>Формат печати</td><td>'. $color.'</td>';
+        $html .= '<tr><td>Сверление</td><td>'. $postprint_drilling.'</td>';
+        $html .= '<tr><td>Скругление углов</td><td>'. $postprint_skr_corn.'</td>';
+        $html .= '<tr><td>Двусторонняя ламинация</td><td>'. $postprint_lam_11.'</td>';
+        $html .= '<tr><td>Перфорация</td><td>'. $postprint_perf.'</td>';
+        $html .= '<tr><td>Автоматическая фальцовка</td><td>'. $postprint_falc_auto.'</td>';
+        $html .= '<tr><td>Биговка</td><td>'. $postprint_big_hand.'</td>';
+        $html .= '<tr><td>Цена</td><td>'. $price.'</td>';
+        $html .= '</table>';
+        Yii::$app->mailer->compose()
+            ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem'])
+            ->setTo('info@ultracolors.ru')
+            ->setSubject("Новая заявка с сайта")
+            ->setHtmlBody($html)
+            ->send();
+
+    }
+
+    public function actionMail2(){
+        $weight = Yii::$app->request->get('weight');
+        $height = Yii::$app->request->get('height');
+        $kolvo = Yii::$app->request->get('kolvo');
+        $material = Yii::$app->request->get('material');
+        $prokleika = Yii::$app->request->get('prokleika');
+        $name = Yii::$app->request->get('name');
+        $number = Yii::$app->request->get('number');
+        $file = Yii::$app->request->get('file');
+        $price = Yii::$app->request->get('price');
+        $html = '<table border="1">';
+        $html .= '<tr><td>ширина</td><td>'. $weight.'</td>';
+        $html .= '<tr><td>высота</td><td>'. $height.'</td>';
+        $html .= '<tr><td>количество</td><td>'. $kolvo.'</td>';
+        $html .= '<tr><td>материал</td><td>'. $material.'</td>';
+        $html .= '<tr><td>обрезка</td><td>'. $prokleika.'</td>';
+        $html .= '<tr><td>имя</td><td>'. $name.'</td>';
+        $html .= '<tr><td>телефон</td><td>'. $number.'</td>';
+        $html .= '<tr><td>файл</td><td>'. $file.'</td>';
+        $html .= '<tr><td>цена</td><td>'. $price.'</td>';
+        $html .= '</table>';
+        Yii::$app->mailer->compose()
+            ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem'])
+            ->setTo('info@ultracolors.ru')
+            ->setSubject("Новая заявка с сайта")
+            ->setHtmlBody($html)
+            ->send();
+    }
+}
