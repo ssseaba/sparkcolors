@@ -106,13 +106,16 @@ body{
 .head-info{
     display: flex;
     gap: 30px;
+    margin-left: 500px;
 }
 
 .head-info li{
     list-style-type: none;
     font-size: 14px;
 }
-
+.img-h{
+    width: 200px;
+}
 .main-fon{
     background-color: rgba(253, 251, 251, 0.50);
     width: 98%;
@@ -293,17 +296,19 @@ span.ant-dot {
 
 .calc-but{
     margin-top: -20px;
-    margin-left: 110px;
+    margin-left: 125px;
 }
 
 .calc-but button{
-    width: 150px;
+    width: 12%;
     height: 32px;
     border-radius: 15px;
     border: 2px solid;
     font-family: Furore; 
     background: none;
     letter-spacing: 3px;
+    cursor: pointer;
+
 }
 
 .calc-but button:hover{
@@ -502,13 +507,71 @@ input[type="number"] {
     display: none;
 }
 
+.p2-1{
+    font-size: 11px;
+    width: 230px;
+    text-align: center;
+    margin-left: 55px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 9999;
+    border-radius: 10px;
+}
+
+.popup form {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup label {
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.popup input {
+    padding-left: 10px ;
+    margin-bottom: 10px;
+    height: 22px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.popup button {
+    margin-top: 10px;
+}
+#openPopup{
+    margin-left: -440px;
+    margin-top: 365px;
+    position: absolute;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+}
+#closePopup{
+    margin-left: 210px;
+}
+#otpr{
+    width: 100%;
+
+}
+
 @media screen and (max-width: 1268px) and (min-width: 425px){
     .info-text{
         width: 100%;
     }
 }
 
-@media screen and (max-width: 425px){
+@media screen and (max-width: 500px){
     .container {
         width: 95%;
         margin: 0 auto;
@@ -523,9 +586,6 @@ input[type="number"] {
     }
     .head{
         display: none;
-    }
-    .head-2 img{
-        width: 90%;
     }
     .menu-2{
         display: block;
@@ -580,6 +640,14 @@ input[type="number"] {
         position: absolute;
         margin-top: 480px;
         margin-left: 110px;
+    }
+    .calc-but {
+        width: 70%;
+    }
+    #openPopup{
+        width: 50%;
+        margin-left: 0;
+        margin-top: -30px;
     }
     .price{
         width: 100%;

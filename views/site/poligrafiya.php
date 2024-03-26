@@ -73,6 +73,7 @@ $this->registerCssFile("@web/css/poligrafiya.css", [
                                 <option value="210-98">210*98 мм</option>
                                 <option value="150-70">150*70 мм</option>
                                 <option value="100-70">100*70 мм</option>
+                                <option value="90-50">90*50 мм</option>
                             </select>
                         </div>
                         <div class="select_wrapper">

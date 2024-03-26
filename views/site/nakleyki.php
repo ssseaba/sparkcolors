@@ -41,25 +41,23 @@ $this->registerCssFile("@web/css/nakleyki.css", [
                     <div class="ant-carousel-arrow-right"></div>
                     <div class="ant-carousel-dots"></div>
                 </div>
-                <div class="price">
-                    <p>от 1300р</p>
-                </div>
             </div>
             <div class="forms">
                 <form class="form" action="/site/mail2">
                     <div class="two-b">
                         <div class="form-item">
+                            <label for="kolvo">Количество</label>
+                            <input type="number" name="kolvo" id="kolvo" placeholder="шт">
+                        </div>
+                        <div class="form-item">
                             <label for="weight">Ширина</label>
-                            <input type="number" name="weight" id="weight" placeholder="от 300мм" value="">
+                            <input type="number" name="weight" id="weight" placeholder="мм" value="">
                         </div>
                         <div class="form-item">
                             <label for="height">высота</label>
-                            <input type="number" name="height" id="height" placeholder="от 300мм" value="">
+                            <input type="number" name="height" id="height" placeholder="мм" value="">
                         </div>
-                        <div class="form-item">
-                            <label for="kolvo">Количество</label>
-                            <input type="number" name="kolvo" id="kolvo" placeholder="от 1шт">
-                        </div>
+
                         <div class="form-item">
                             <label for="nakleyka">Печать</label>
                             <select id="nakleyka" name="material">
@@ -67,7 +65,7 @@ $this->registerCssFile("@web/css/nakleyki.css", [
                             </select>
                         </div>
                         <div class="pec-form"style="margin-top: 30px ">
-                            <input type="checkbox" id="obrezka" name="prokleika" value=""/>
+                            <input type="checkbox" id="obrezka" name="prokleika" value="no" checked>
                             <span id="obrezka-s" data-toggle="tooltip" data-placement="top">обрезка</span>
                         </div>
 
@@ -103,11 +101,27 @@ $this->registerCssFile("@web/css/nakleyki.css", [
                         </div>
                     </div>
                 </form>
-                <div class="calc-but">
-                    <button onclick="calc_nakl()" >рассчитать</button>
-                </div>
+<!--                <div class="calc-but">-->
+<!--                   <button>рассчитать</button>-->
+<!--                    <div class="popup-form">-->
+<!--                        <div >-->
+<!--                            <button id="openPopup">расчёт</button>-->
+<!--                            <div id="popupForm" class="popup">-->
+<!--                                <img src="/img/Vector.png" id="closePopup">-->
+<!--                                <form action="#" method="post">-->
+<!--                                    <label for="name">Имя</label>-->
+<!--                                    <input type="text" id="name" name="name" required>-->
+<!--                                    <label for="number">Телефон</label>-->
+<!--                                    <input type="number" id="number" name="number" required>-->
+<!--                                    <label for="email">Email</label>-->
+<!--                                    <input type="email" id="email" name="email" required>-->
+<!--                                    <button id="otpr" type="submit">Отправить</button>-->
+<!--                                </form>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
-
         </div>
     </div>
     <div>
@@ -120,6 +134,28 @@ $this->registerCssFile("@web/css/nakleyki.css", [
 </div>
 </body>
 </html>
+    <script>
+        document.getElementById('kolvo')
+            .addEventListener( 'blur',  function(e){
+                calc_nakl();
+            } , false );
+        document.getElementById('weight')
+            .addEventListener( 'blur',  function(e){
+                calc_nakl();
+            } , false );
+        document.getElementById('height')
+            .addEventListener( 'blur',  function(e){
+                calc_nakl();
+            } , false );
+        document.getElementById('nakleyka')
+            .addEventListener( 'blur',  function(e){
+                calc_nakl();
+            } , false );
+        document.getElementById('obrezka')
+            .addEventListener('change', function() {
+                calc_nakl();
+            });
+    </script>
 <?php
 $this->registerJsFile(
     '@web/js/js.js',
@@ -129,6 +165,10 @@ $this->registerJsFile(
 <?php
 $this->registerJsFile(
     '@web/js/calc.js',
+    ['depends' => [yii\web\JqueryAsset::class]]
+);
+$this->registerJsFile(
+    '@web/js/form.js',
     ['depends' => [yii\web\JqueryAsset::class]]
 );
 ?>

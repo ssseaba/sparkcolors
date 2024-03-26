@@ -112,6 +112,14 @@ class SiteController extends Controller
     {
         return $this->render('viveski');
     }
+    public function actionPrivacy()
+    {
+        return $this->render('privacy');
+    }
+    public function actionContacts()
+    {
+        return $this->render('contact');
+    }
 
     /**
      * Login action.
@@ -242,5 +250,236 @@ class SiteController extends Controller
             ->setSubject("Новая заявка с сайта")
             ->setHtmlBody($html)
             ->send();
+
+        return $this->redirect(['site/nakleyki']);
     }
+
+
+    public function actionMail3(){
+        $name = Yii::$app->request->get('name');
+        $number = Yii::$app->request->get('number');
+        $email = Yii::$app->request->get('email');
+        $html = '<table border="1">';
+        $html .= '<tr><td>имя</td><td>'. $name.'</td>';
+        $html .= '<tr><td>телефон</td><td>'. $number.'</td>';
+        $html .= '<tr><td>email</td><td>'. $email.'</td>';
+        $html .= '</table>';
+        Yii::$app->mailer->compose()
+            ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem/вывески'])
+            ->setTo('info@ultracolors.ru')
+            ->setSubject("Новая заявка с сайта")
+            ->setHtmlBody($html)
+            ->send();
+        return $this->redirect(['site/viveski']);
+    }
+    public function actionMail4(){
+        $name = Yii::$app->request->get('name');
+        $number = Yii::$app->request->get('number');
+        $email = Yii::$app->request->get('email');
+        $html = '<table border="1">';
+        $html .= '<tr><td>имя</td><td>'. $name.'</td>';
+        $html .= '<tr><td>телефон</td><td>'. $number.'</td>';
+        $html .= '<tr><td>email</td><td>'. $email.'</td>';
+        $html .= '</table>';
+        Yii::$app->mailer->compose()
+            ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem/печати и штапмы'])
+            ->setTo('info@ultracolors.ru')
+            ->setSubject("Новая заявка с сайта")
+            ->setHtmlBody($html)
+            ->send();
+        return $this->redirect(['site/pechati']);
+    }
+    public function actionMail5(){
+        $name = Yii::$app->request->get('name');
+        $number = Yii::$app->request->get('number');
+        $email = Yii::$app->request->get('email');
+        $html = '<table border="1">';
+        $html .= '<tr><td>имя</td><td>'. $name.'</td>';
+        $html .= '<tr><td>телефон</td><td>'. $number.'</td>';
+        $html .= '<tr><td>email</td><td>'. $email.'</td>';
+        $html .= '</table>';
+        Yii::$app->mailer->compose()
+            ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem/услуги дизайна'])
+            ->setTo('info@ultracolors.ru')
+            ->setSubject("Новая заявка с сайта")
+            ->setHtmlBody($html)
+            ->send();
+        return $this->redirect(['site/uslugi-des']);
+    }
+    public function actionMail6(){
+        $name = Yii::$app->request->get('name');
+        $number = Yii::$app->request->get('number');
+        $email = Yii::$app->request->get('email');
+        $html = '<table border="1">';
+        $html .= '<tr><td>имя</td><td>'. $name.'</td>';
+        $html .= '<tr><td>телефон</td><td>'. $number.'</td>';
+        $html .= '<tr><td>email</td><td>'. $email.'</td>';
+        $html .= '</table>';
+        Yii::$app->mailer->compose()
+            ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem/мобильные стенды и конструкции'])
+            ->setTo('info@ultracolors.ru')
+            ->setSubject("Новая заявка с сайта")
+            ->setHtmlBody($html)
+            ->send();
+        return $this->redirect(['site/mobile-stends']);
+    }
+    public function actionMail7(){
+        $name = Yii::$app->request->get('name');
+        $number = Yii::$app->request->get('number');
+        $email = Yii::$app->request->get('email');
+        $html = '<table border="1">';
+        $html .= '<tr><td>имя</td><td>'. $name.'</td>';
+        $html .= '<tr><td>телефон</td><td>'. $number.'</td>';
+        $html .= '<tr><td>email</td><td>'. $email.'</td>';
+        $html .= '</table>';
+        Yii::$app->mailer->compose()
+            ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem/сувенирная продукция'])
+            ->setTo('sabdullaevaa545@gmail.com')
+            ->setSubject("Новая заявка с сайта")
+            ->setHtmlBody($html)
+            ->send();
+        return $this->redirect(['site/suvenir']);
+    }
+    public function actionMail8(){
+        $name = Yii::$app->request->get('name');
+        $number = Yii::$app->request->get('number');
+        $email = Yii::$app->request->get('email');
+        $html = '<table border="1">';
+        $html .= '<tr><td>имя</td><td>'. $name.'</td>';
+        $html .= '<tr><td>телефон</td><td>'. $number.'</td>';
+        $html .= '<tr><td>email</td><td>'. $email.'</td>';
+        $html .= '</table>';
+        Yii::$app->mailer->compose()
+            ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem/комплексное рекламное обслуживание'])
+            ->setTo('info@ultracolors.ru')
+            ->setSubject("Новая заявка с сайта")
+            ->setHtmlBody($html)
+            ->send();
+        return $this->redirect(['site/kompleks']);
+    }
+
+    public function actionMail9(){
+        $kolvo = yii::$app->request->get('kolvo');
+        $weight = Yii::$app->request->get('weight');
+        $height = Yii::$app->request->get('height');
+        $material = Yii::$app->request->get('material');
+        $luvers = Yii::$app->request->get('luvers');
+        $prokleika = Yii::$app->request->get('prokleika');
+        $obrez = Yii::$app->request->get('obrez');
+        $name = Yii::$app->request->get('name');
+        $number = Yii::$app->request->get('number');
+        $email = Yii::$app->request->get('email');
+        $result = Yii::$app->request->get('result');
+        $html = '<table border="1">';
+        $html .= '<tr><td>количество</td><td>'. $kolvo.'</td>';
+        $html .= '<tr><td>ширина</td><td>'. $weight.'</td>';
+        $html .= '<tr><td>высота</td><td>'. $height.'</td>';
+        $html .= '<tr><td>материал</td><td>'. $material.'</td>';
+        $html .= '<tr><td>люверсы</td><td>'. $luvers.'</td>';
+        $html .= '<tr><td>проклейка</td><td>'. $prokleika.'</td>';
+        $html .= '<tr><td>обрезка</td><td>'. $obrez.'</td>';
+        $html .= '<tr><td>имя</td><td>'. $name.'</td>';
+        $html .= '<tr><td>телефон</td><td>'. $number.'</td>';
+        $html .= '<tr><td>email</td><td>'. $email.'</td>';
+        $html .= '<tr><td>цена</td><td>'. $result.'</td>';
+        $html .= '</table>';
+        if ($prokleika -> checked) {
+            $to = 'info@ultracolors.ru';
+            $subject = 'Данные о проклейке периметра';
+            $message = 'Проклейка периметра была выбрана в форме.';
+            mail($to, $subject, $message);
+        }
+        if ($obrez -> checked) {
+            $to = 'info@ultracolors.ru';
+            $subject = 'Данные о обрезе';
+            $message = 'Обрез был выбран в форме.';
+            mail($to, $subject, $message);
+        }
+
+        Yii::$app->mailer->compose()
+            ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem'])
+            ->setTo('info@ultracolors.ru')
+            ->setSubject("Новая заявка с сайта")
+            ->setHtmlBody($html)
+            ->send();
+        return $this->redirect(['site/interernaya']);
+    }
+    public function actionMail10(){
+        $kolvo = yii::$app->request->get('kolvo');
+        $weight = Yii::$app->request->get('weight');
+        $height = Yii::$app->request->get('height');
+        $material = Yii::$app->request->get('material');
+        $luvers = Yii::$app->request->get('luvers');
+        $prokleika = Yii::$app->request->get('prokleika');
+        $name = Yii::$app->request->get('name');
+        $number = Yii::$app->request->get('number');
+        $email = Yii::$app->request->get('email');
+        $result = Yii::$app->request->get('result');
+        $html = '<table border="1">';
+        $html .= '<tr><td>количество</td><td>'. $kolvo.'</td>';
+        $html .= '<tr><td>ширина</td><td>'. $weight.'</td>';
+        $html .= '<tr><td>высота</td><td>'. $height.'</td>';
+        $html .= '<tr><td>материал</td><td>'. $material.'</td>';
+        $html .= '<tr><td>люверсы</td><td>'. $luvers.'</td>';
+        $html .= '<tr><td>проклейка</td><td>'. $prokleika.'</td>';
+        $html .= '<tr><td>имя</td><td>'. $name.'</td>';
+        $html .= '<tr><td>телефон</td><td>'. $number.'</td>';
+        $html .= '<tr><td>email</td><td>'. $email.'</td>';
+        $html .= '<tr><td>цена</td><td>'. $result.'</td>';
+        $html .= '</table>';
+        if ($prokleika -> checked) {
+            $to = 'info@ultracolors.ru';
+            $subject = 'Данные о проклейке периметра';
+            $message = 'Проклейка периметра была выбрана в форме.';
+            mail($to, $subject, $message);
+        }
+
+        Yii::$app->mailer->compose()
+            ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem'])
+            ->setTo('info@ultracolors.ru')
+            ->setSubject("Новая заявка с сайта")
+            ->setHtmlBody($html)
+            ->send();
+        return $this->redirect(['site/shirokoformatnaya']);
+    }
+    public function actionMail11(){
+        $kolvo = yii::$app->request->get('kolvo');
+        $weight = Yii::$app->request->get('weight');
+        $height = Yii::$app->request->get('height');
+        $material = Yii::$app->request->get('material');
+        $cvet = Yii::$app->request->get('cvet');
+        $prokleika  = Yii::$app->request->get('prokleika');
+        $name = Yii::$app->request->get('name');
+        $number = Yii::$app->request->get('number');
+        $email = Yii::$app->request->get('email');
+        $result = Yii::$app->request->get('result');
+        $html = '<table border="1">';
+        $html .= '<tr><td>количество</td><td>'. $kolvo.'</td>';
+        $html .= '<tr><td>ширина</td><td>'. $weight.'</td>';
+        $html .= '<tr><td>высота</td><td>'. $height.'</td>';
+        $html .= '<tr><td>материал</td><td>'. $material.'</td>';
+        $html .= '<tr><td>цветность</td><td>'. $cvet.'</td>';
+        $html .= '<tr><td>ламинация</td><td>'. $prokleika.'</td>';
+        $html .= '<tr><td>имя</td><td>'. $name.'</td>';
+        $html .= '<tr><td>телефон</td><td>'. $number.'</td>';
+        $html .= '<tr><td>email</td><td>'. $email.'</td>';
+        $html .= '<tr><td>цена</td><td>'. $result.'</td>';
+        $html .= '</table>';
+        if ($prokleika -> checked) {
+            $to = 'info@ultracolors.ru';
+            $subject = 'Данные о проклейке периметра';
+            $message = 'Проклейка периметра была выбрана в форме.';
+            mail($to, $subject, $message);
+        }
+
+
+        Yii::$app->mailer->compose()
+            ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem/таблички'])
+            ->setTo('info@ultracolors.ru')
+            ->setSubject("Новая заявка с сайта")
+            ->setHtmlBody($html)
+            ->send();
+        return $this->redirect(['site/tablichki']);
+    }
+
 }

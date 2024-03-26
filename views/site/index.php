@@ -3,6 +3,10 @@
 $this->registerCssFile("https://fonts.cdnfonts.com/css/furore", [
     'depends' => [yii\bootstrap5\BootstrapAsset::class],
 ]);
+$this->registerCssFile("https://fonts.cdnfonts.com/css/noto-sans-jp", [
+    'depends' => [yii\bootstrap5\BootstrapAsset::class],
+]);
+
 $this->registerCssFile("@web/css/glavnaya.css", [
     'depends' => [yii\bootstrap5\BootstrapAsset::class],
 ]);
@@ -22,6 +26,7 @@ $this->registerCssFile("@web/css/glavnaya.css", [
                 <a href="/site/kompleks">Комплексное рекламное обслуживание</a>
                 <a href="/site/suvenir">Сувенирная продукция</a>
                 <a href="/site/mobile-stends">Мобильные конструкции и стенды</a>
+                <a class="menu-item" href="/site/contact">Контакты</a>
             </div>
             <div class="menu-img">
                 <img class="main-image" src="/img/мужик.png" alt="" width="690px">

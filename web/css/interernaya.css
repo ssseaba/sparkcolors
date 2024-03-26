@@ -1,7 +1,7 @@
 body{
     margin: 0;
     background: linear-gradient(180deg, #7E0873 9.99%, rgba(255, 255, 255, 0.05) 50.08%, #C16000 81.67%);
-    font-family: Furore; 
+    font-family: Furore;
     background-repeat: no-repeat;
 }
 
@@ -106,8 +106,11 @@ body{
 .head-info{
     display: flex;
     gap: 30px;
+    margin-left: 500px;
 }
-
+.img-h{
+    width: 200px;
+}
 .head-info li{
     list-style-type: none;
     font-size: 14px;
@@ -291,17 +294,18 @@ span.ant-dot {
 .calc-but {
     position: absolute;
     margin-top: -20px;
-    margin-left: -320px;
+    margin-left: -310px;
 }
 
 .calc-but button{
-    width: 150px;
+    width: 140%;
     height: 32px;
     border-radius: 15px;
     border: 2px solid;
-    font-family: Furore; 
+    font-family: Furore;
     background: none;
     letter-spacing: 3px;
+    cursor: pointer;
 }
 
 .calc-but button:hover{
@@ -351,7 +355,7 @@ input::-webkit-inner-spin-button {
     height: 30px;
     border-radius: 10px;
     border: none;
-    font-family: Furore; 
+    font-family: Furore;
     background-color: rgb(255, 255, 255);
     outline: none;
 }
@@ -450,6 +454,7 @@ input[type="number"] {
     text-align: center;
     padding: 20px 10px 10px;
     margin-top: 120px;
+
 }
 
 .footer{
@@ -511,6 +516,64 @@ input[type="number"] {
 .menu-2{
     display: none;
 }
+/*.popup-form{*/
+
+/*}*/
+/*#openPopup{*/
+
+/*}*/
+.inputs{
+    display: flex;
+    flex-direction: column;
+}
+.p2-1{
+    font-size: 11px;
+    width: 230px;
+    text-align: center;
+    margin-left: 55px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 9999;
+    border-radius: 10px;
+}
+
+.popup .form-h {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup label {
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.popup input {
+    padding-left: 10px ;
+    margin-bottom: 10px;
+    height: 22px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.popup button {
+    margin-top: 10px;
+}
+
+#closePopup{
+    margin-left: 210px;
+}
+#otpr{
+    width: 100%;
+}
 
 @media screen and (max-width: 1268px) and (min-width: 425px){
     .info-text{
@@ -518,7 +581,7 @@ input[type="number"] {
     }
 }
 
-@media screen and (max-width: 425px){
+@media screen and (max-width: 500px){
     .container {
         width: 95%;
         margin: 0 auto;
@@ -528,13 +591,15 @@ input[type="number"] {
     }
     .head-info{
         display: none;
+        margin-left: 0;
+    }
+    .head-info li {
+        display: none;
     }
     .head{
         display: none;
     }
-    .head-2 img{
-        width: 90%;
-    }
+
     .menu-2{
         display: block;
         margin-top: 11px;
@@ -555,7 +620,7 @@ input[type="number"] {
     }
 
     .p-1{
-        font-size: 35px;
+        font-size: 34px;
     }
     .about{
         height: 100%;
@@ -632,6 +697,7 @@ input[type="number"] {
     }
     .info-text{
         font-size: 18px;
+        font-family: 'Walmart', sans-serif;
     }
     .footer-about p{
         display: none;
@@ -645,7 +711,7 @@ input[type="number"] {
     .p-4{
         text-align: left;
         margin-top: 39px;
-        padding-right: 150px;
+        padding-right: 50px;
     }
     .inf-soc {
         gap: 0px;
