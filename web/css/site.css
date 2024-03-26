@@ -1,11 +1,29 @@
-main > .container {
-    padding: 0px 15px 20px;
-}
 
+.head-info{
+    display: flex;
+    gap: 30px;
+
+}
+.soc-hd{
+    display: flex;
+}
+#soc{
+    /*margin-left: 550px;*/
+    margin-top: 10px;
+}
+.info-text p{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 600;
+}
 .footer {
     font-size: .9em;
 }
 
+.privacy a{
+    list-style-type: none;
+    color: black;
+    font-size: 12px;
+}
 .footer > .container {
     padding-right: 15px;
     padding-left: 15px;
@@ -56,10 +74,80 @@ a.desc:after {
     margin: 0 0 15px 0;
 }
 
+.privacy{
+    margin-top: 40px;
+}
+
 /* align the logout "link" (button in form) of the navbar */
 .nav li > form > button.logout {
     padding-top: 7px;
     color: rgba(255, 255, 255, 0.5);
+}
+@media screen and (max-width: 500px){
+    .mobile div {
+        display: flex;
+        gap: 4px;
+        margin-top:-3px;
+        margin-left: -30px;
+    }
+
+    .head-info li{
+        display: none;
+    }
+    .head-info {
+        display: none;
+        margin-left: 0;
+    }
+
+    .img-h{
+        width: 150px;
+    }
+    .img-i{
+        display: none;
+    }
+    .img-v{
+        width: 20px;
+        padding-top: 5px;
+    }
+    .img-t{
+        width: 15px;
+        padding-top: 3px;
+    }
+    .img-w{
+        width: 15px;
+        padding-top: 3px;
+    }
+    .privacy{
+        margin-top: -5px;
+        order: 3;
+        padding-top: 5px;
+        margin-bottom: 10px;
+        margin-left: 40px;
+    }
+    .info-text{
+        font-size: 18px;
+    }
+    .p-4{
+        text-align: left;
+        margin-top: -50px;
+        margin-left: 60px;
+    }
+    .footer{
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-info p{
+        font-size: 16px;
+    }
+    .footer-about{
+        margin-top: 15px;
+    }
+    .social{
+        display: none;
+    }
+    .p-4{
+        padding-right: 0;
+    }
 }
 
 @media(max-width:767px) {
@@ -83,4 +171,7 @@ a.desc:after {
 
 .form-group {
     margin-bottom: 1rem;
+}
+.menu-item {
+    font-size: 15px;
 }

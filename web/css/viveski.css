@@ -21,6 +21,22 @@ body{
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5)
 }
 
+#soc{
+    /*margin-left: 550px;*/
+    margin-top: 5px;
+}
+
+.img-h{
+    width: 200px;
+}
+.img-v{
+    width: 33px;
+}.img-w{
+    width: 23px;
+}
+ .img-t{
+    width: 23px;
+}
 .active{
     text-decoration: underline;
     text-decoration-thickness: 4px;
@@ -44,9 +60,10 @@ body{
     text-decoration: none;
 }
 
+
 .dropdown{
     display: flex;
-    gap: 5 px;
+    gap: 5px;
 }
 
 .dropbtn {
@@ -105,6 +122,7 @@ body{
 .head-info{
     display: flex;
     gap: 30px;
+    margin-left: 500px;
 }
 
 .head-info li{
@@ -134,12 +152,13 @@ body{
 
 .p-1{
     font-size: 70px;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .p-2{
-    margin-top: -70px;
-    font-size: 30px;
+    margin-right: 20px;
+    margin-top: -80px;
+    font-size: 20px;
     text-align: center;
 }
 
@@ -281,8 +300,12 @@ body{
     text-align: center;
     padding: 20px 0px 20px;
     margin-top: 120px;
-}
+    font-family: 'PF DinText Pro Medium', sans-serif;
 
+}
+/*.privacy{*/
+/*    margin-top: 50px;*/
+/*}*/
 .footer{
     display: flex;
     justify-content: space-between;
@@ -331,7 +354,6 @@ body{
 .social p{
     font-size: 14px;
     margin-top: 20px;
-   
 }
 
 .social div{
@@ -343,40 +365,168 @@ body{
     display: none;
 }
 
+.popup-form{
+
+}
+#openPopup{
+    margin-left: 70px;
+    width: 200px;
+    height: 30px;
+    /* color: white; */
+    border-radius: 15px;
+    border: 2px solid;
+    font-family: Furore;
+    /* background: black; */
+    background: none;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+#openPopup:hover{
+    background-color: black;
+    color: white;
+    border: none;
+    transition: 0.5s;
+}
+
+.p2-1{
+    font-size: 11px;
+    width: 230px;
+    text-align: center;
+    margin-left: 55px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 9999;
+    border-radius: 10px;
+}
+
+.popup form {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup label {
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.popup input {
+    padding-left: 10px ;
+    margin-bottom: 10px;
+    height: 22px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.popup button {
+    margin-top: 10px;
+}
+#closePopup{
+    margin-left: 210px;
+}
+#otpr{
+    height: 30px;
+    border-radius: 15px;
+    border: 2px solid;
+    font-family: Furore;
+    background: none;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+#otpr:hover{
+    background-color: black;
+    color: white;
+    border: none;
+    transition: 0.5s;
+}
+
+
 @media screen and (max-width: 1268px) and (min-width: 425px){
     .info-text{
         width: 100%;
     }
 }
 
-@media screen and (max-width: 425px){
+@media screen and (max-width: 500px){
     .container {
-        width: 95%;
+        width: 100%;
         margin: 0 auto;
     }
     .about{
-        width: 100%;
+        width: 90%;
     }
     .head-info{
         display: none;
+        margin-left: 0;
     }
     .p-1{
         margin-top: 15px;
         font-size: 40px;
     }.p-2{
         margin-top: -40px;
-        font-size: 20px;
+        font-size: 16px;
+         margin-right: 20px;
     }
+     .header{
+         width: 98%;
+     }
+     #openPopup{
+
+     }
+     .popup-form{
+      margin-left: -70px;
+     }
+     .img-h{
+         width: 20%;
+     }
     .head{
         display: none;
     }
+    .head-info li{
+        display: none;
+    }
+    .head-2{
+        padding: 0 0 10px;
+    }
     .head-2 img{
-        width: 90%;
+
+    }
+    .img-h{
+        width: 150px;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+    .img-v{
+      width: 20px;
+        padding-top: 5px;
+    }
+    .img-t{
+        width: 15px;
+        padding-top: 3px;
+    }
+    .img-w{
+         width: 15px;
+        padding-top: 3px;
+     }
+
+    .mobile div{
+        padding-top: 10px;
+        padding-left: 10px;
     }
     .menu-2{
         display: block;
-        margin-top: 11px;
-        margin-right: 8px;
+        margin-top:18px;
+        margin-right: 28px;
     }
     .main-fon{
         width: 98%;
@@ -394,7 +544,7 @@ body{
     .title-info {
         margin-left: 60px;
     }
-    .title img {
+    .v-img {
         display: none;
     }
     .ant-carousel{
@@ -424,16 +574,31 @@ body{
         top: 40%;
     }
 
-
     .info-fon{
         margin-top: 50px;
         width: 98%;
         margin-right: 100px;
         margin-bottom: 40px;
+        padding-right: 4px;
     }
     .info-text{
         font-size: 18px;
     }
+   .footer{
+        flex-direction: column;
+    }
+   .footer-info{
+       margin-left: 20px;
+
+   }
+   .footer-fon{
+       width: 98%;
+   }
+   .footer-about{
+       margin-left: 20px;
+       margin-top: 20px;
+   }
+
     .footer-about p{
         display: none;
     }
@@ -441,20 +606,28 @@ body{
         display: none;
     }
     .footer-info p{
-        font-size: 12px;
+        font-size: 16px;
     }
     .p-4{
         text-align: left;
-        margin-top: 39px;
-        padding-right: 150px;
+        margin-top: 10px;
+        margin-bottom: -60px;
+    }
+    .privacy{
+        order: 3;
+        padding-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 60px;
     }
     .inf-soc {
         gap: 0px;
+        order: 2;
     }
     .social{
-        position: absolute;
-        margin-top: 40px;
-        margin-left: 190px;
+       display: none;
+    }
+    #soc{
+        width: 40px;
     }
     .social div {
         margin-left: 0px;
@@ -539,7 +712,7 @@ body{
         display: block;
         padding: 8px;
         color: black;
-        font-size: 10px;
+        font-size: 15px;
         text-align: left;
         text-decoration: none;
     }

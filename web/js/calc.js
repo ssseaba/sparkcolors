@@ -13,9 +13,26 @@ function calc_sh(){
     if (prokleika){
         count += (weight * 2 + height * 2)/ 1000 * 20 * kolvo;
     }
-    console.log(weight, height, material, luvers, kolvo, prokleika, result);
-    result.innerHTML = count;  
+
+    if (count < 600) {
+        count = "Мин. сумма: 600 рублей";
+    }
+    if (prokleika.checked) {
+        prokleika = "yes";
+    } else {
+        prokleika = "no";
+    }
+    result.innerHTML = count;
+
+
+    document.getElementById("weight").addEventListener("input", calc_sh);
+    document.getElementById("height").addEventListener("input", calc_sh);
+    document.getElementById("material").addEventListener("input", calc_sh);
+    document.getElementById("luvers").addEventListener("input", calc_sh);
+    document.getElementById("kolvo").addEventListener("input", calc_sh);
+    document.getElementById("prokleika").addEventListener("change", calc_sh);
 }
+
 
 function calc_tabl(){
     var weight = document.getElementById("weight").value;
@@ -27,8 +44,9 @@ function calc_tabl(){
     var result = document.getElementById("result");
     var count = 0;
 
-    count = (weight / 1000) * (height / 1000);
-    count = count * material + 800 * kolvo;
+    count = parseInt(material) + 800;
+    count = count * (weight / 1000) * (height / 1000) * kolvo;
+
     if (lamina){
         count = count + count * 0.3;
     }
@@ -36,39 +54,70 @@ function calc_tabl(){
         count = count + count * 0.3;
     }
 
-    console.log(weight, height, material, kolvo, cvet, lamina, result);
-    result.innerHTML = count;  
+    if (count < 600) {
+        count = "Мин. сумма: 600 рублей";
+    }
+
+    result.innerHTML = count;
+
+    document.getElementById("weight").addEventListener("input", calc_tabl);
+    document.getElementById("height").addEventListener("input", calc_tabl);
+    document.getElementById("material").addEventListener("input", calc_tabl);
+    document.getElementById("kolvo").addEventListener("input", calc_tabl);
+    document.getElementById("cvet").addEventListener("input", calc_tabl);
+    document.getElementById("lamina").addEventListener("change", calc_tabl);
 }
 
 function calc_int(){
-    var weight = document.getElementById("weight").value;
-    var height = document.getElementById("height").value;
+    var weight = document.getElementById("weight");
+    var height = document.getElementById("height");
     var material = document.getElementById("material");
-    var kolvo = document.getElementById("kolvo").value;
-    var luvers = document.getElementById("luvers").value;
-    var prokleika = document.getElementById("prokleika").checked;
-    var obrez = document.getElementById("obrez").checked;
+    var kolvo = document.getElementById("kolvo");
+    var luvers = document.getElementById("luvers");
+    var prokleika = document.getElementById("prokleika");
+    var obrez = document.getElementById("obrez");
     var result = document.getElementById("result");
     var count = 0;
 
-    count = (weight / 1000) * (height / 1000);
-    
-    count = count * material.value * kolvo;
-    console.log(count)
-    if (prokleika){
-        count += (weight * 2 + height * 2)/ 1000 * 20 * kolvo;
+    function calculateTotal() {
+        count = (weight.value / 1000) * (height.value / 1000);
+        count = count * material.value * kolvo.value;
+
+        if (prokleika.checked) {
+            count += (weight.value * 2 + height.value * 2) / 1000 * 20 * kolvo.value;
+        }
+
+        if (prokleika.checked) {
+            prokleika = "yes";
+        } else {
+            prokleika = "no";
+        }
+
+        if (material.options[material.selectedIndex].dataset.id) {
+            count += luvers.value * kolvo.value * 50;
+        }
+
+        if (obrez.checked){
+            count += (weight.value * 2 + height.value * 2) / 1000 * 40 * kolvo.value;
+        }
+
+        if (count < 600) {
+            count = "Мин. сумма: 600 рублей";
+        }
+
+        console.log(prokleika)
+        result.innerHTML = count;
     }
 
-    if (material.options[material.selectedIndex].dataset.id) { 
-       count += luvers * kolvo * 50;
-    }
+    weight.addEventListener('input', calculateTotal);
+    height.addEventListener('input', calculateTotal);
+    material.addEventListener('change', calculateTotal);
+    kolvo.addEventListener('input', calculateTotal);
+    luvers.addEventListener('input', calculateTotal);
+    prokleika.addEventListener('change', calculateTotal);
+    obrez.addEventListener('change', calculateTotal);
 
-    if (obrez){
-        count += (weight * 2 + height * 2)/ 1000 * 40 * kolvo;
-    }
-    
-    console.log(weight, height, material.value, kolvo, prokleika, obrez, luvers, result);
-    result.innerHTML = count; 
+    calculateTotal();
 }
 
 let sel1 = document.querySelector('#material'),
@@ -108,10 +157,18 @@ function calc_nakl(){
     if (obrezka){
         count += (weight * 2 + height * 2)/ 1000 * 40 * kolvo;
     }
-   
-   
-    console.log(weight, height, kolvo, nakleyka, obrezka, kontur, name, phone, file, result);
-    result.innerHTML = count; 
+
+    if (count < 600) {
+        count = "Мин. сумма: 600 рублей";
+    }
+
+    result.innerHTML = count;
+
+    document.getElementById("weight").addEventListener("input", calc_nakl);
+    document.getElementById("height").addEventListener("input", calc_nakl);
+    document.getElementById("nakleyka").addEventListener("input", calc_nakl);
+    document.getElementById("kolvo").addEventListener("input", calc_nakl);
+    document.getElementById("obrezka").addEventListener("change", calc_nakl);
 
 }
 

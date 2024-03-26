@@ -15,7 +15,7 @@
             <div class="header container">
                 <div class="head container">
                     <a href="glavnaya.html">
-                        <img src="img/Logo.png" alt="">
+                        <img src="img/rrrr.png" alt="">
                     </a>
                     <ul class="head-info">
                         <li>info@ultracolors.ru</li>

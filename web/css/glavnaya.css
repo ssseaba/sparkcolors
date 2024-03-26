@@ -27,14 +27,17 @@ body {
     display: flex;
     justify-content: center;
     padding: 10px;
-    gap: 600px;
+    gap: 520px;
 }
 
 .head-info {
     display: flex;
     gap: 30px;
 }
+.img-h{
 
+    width: 200px;
+}
 .head-info li {
     list-style-type: none;
     font-size: 14px;
@@ -46,7 +49,8 @@ body {
 
 .main-fon {
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.00) 91.88%);
-    height: 700px;
+    height: 100%;
+    padding-bottom: 30px;
     margin-top: 40px;
     border-radius: 15px;
     margin-left: 60px;
@@ -76,7 +80,7 @@ body {
     display: flex;
     margin-top: 30px;
     gap: 10px;
-    margin-left: 10px;
+    margin-left: 100px;
 }
 
 .footer-about p {
@@ -109,6 +113,10 @@ body {
     display: flex;
     gap: 30px;
     margin-right: 70px;
+}
+#soc{
+    margin-left: 20px;
+    margin-top: 20px;
 }
 
 .footer-fon {
@@ -233,24 +241,27 @@ body {
     display: none;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 500px) {
     .container{
         width: 95%;
         margin: 0 auto;
     }
-
-    .head-info{
-        display: none;
+    .head{
+        gap: 0px;
+        justify-content: space-between;
     }
 
-    .head img{
-        width: 100%;
+    .social-2{
+        display: flex;
+        margin-right: 10px;
     }
     .photo{
         display: block;
         z-index: -1;
     }
-
+    .img-h{
+        width: 150px;
+    }
     .photo img{
         width: 97vw;
         margin-top: 70px;
@@ -259,10 +270,10 @@ body {
     .main-fon{
         width: 95%;
         height: 100%;
+        padding-bottom: 10px;
         margin-bottom: 20px;
         margin-left: 0px;
     }
-
     .menu{
         margin-left: 40px;
         gap: 20px;
@@ -277,9 +288,11 @@ body {
     .menu-img{
         display: none;
     }
-
     .footer-about p{
         display: none;
+    }
+    .footer-about img{
+         margin-left:-98px ;
     }
     .p-3{
         display: none;

@@ -18,8 +18,26 @@ $this->registerCssFile("@web/css/suvenir.css", [
             <div class="title-info">
                 <p class="p-1">Сувенирная продукция</p>
                 <p class="p-2">от 2500р</p>
+                <div class="popup-form">
+                    <div >
+                        <button id="openPopup">Написать нам</button>
+                        <div id="popupForm" class="popup">
+                            <img src="/img/Vector.png" id="closePopup">
+                            <form action="/site/mail7">
+                                <label for="name">Имя</label>
+                                <input type="text" id="name" name="name" required>
+                                <label for="number">Телефон</label>
+                                <input type="number" id="number" name="number" required>
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                                <button id="otpr" type="submit">Отправить</button>
+                            </form>
+                        </div>
+                    </div>
+                    <p class="p2-1">*Для получения стоимости необходимо связаться с нами любым удобным для вас способом*</p>
+                </div>
             </div>
-            <img src="/img/suvenir.png" alt="" width="500px">
+            <img class="img-i"  src="/img/suvenir.png" alt="" width="500px">
         </div>
     </div>
     <div class="work container">
@@ -55,6 +73,10 @@ $this->registerCssFile("@web/css/suvenir.css", [
 <?php
 $this->registerJsFile(
     '@web/js/js.js',
+    ['depends' => [yii\web\JqueryAsset::class]]
+);
+$this->registerJsFile(
+    '@web/js/form.js',
     ['depends' => [yii\web\JqueryAsset::class]]
 );
 ?>

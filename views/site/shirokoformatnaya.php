@@ -42,28 +42,52 @@ $this->registerCssFile("@web/css/shirokoformatnaya.css", [
                     <div class="ant-carousel-dots"></div>
                 </div>
                 <div class="price">
-                    <p>Баннер - 600р м/кв<br>
-                        пленка - 600р м/кв</p>
-                </div>
-                <div class="calc-but">
-                    <button onclick="calc_sh()" >рассчитать</button>
+                    <p>Баннер<br>
+                        пленка</p>
                 </div>
             </div>
+            <form action="/site/mail10">
+                <div class="calc-but">
+                    <div class="popup-form">
+                        <div >
+                            <button  id="openPopup">расчёт</button>
+                            <div id="popupForm" class="popup">
+                                <img src="/img/Vector.png" id="closePopup">
+                                <div action="#" method="post">
+                                    <div class="inputs">
+                                        <label for="name">Имя</label>
+                                        <input type="text" id="name" name="name" required>
+                                    </div>
+                                    <div class="inputs">
+                                         <label for="number">Телефон</label>
+                                         <input type="number" id="number" name="number" required>
+                                    </div>
+                                    <div class="inputs">
+                                         <label for="email">Email</label>
+                                         <input type="email" id="email" name="email" required>
+                                    </div>
+                                    <button id="otpr" type="submit">Отправить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             <div class="forms">
                 <div class="form">
                     <div>
                         <div class="form-item">
+                            <label for="kolvo">Количество</label>
+                            <input type="number" name="kolvo" id="kolvo" placeholder="шт">
+                        </div>
+                        <div class="form-item">
                             <label for="weight">Ширина</label>
-                            <input type="number" name="" id="weight" placeholder="от 300мм" value="">
+                            <input type="number" name="weight" id="weight" placeholder="мм" value="">
                         </div>
                         <div class="form-item">
                             <label for="height">высота</label>
-                            <input type="number" name="" id="height" placeholder="от 300мм" value="">
+                            <input type="number" name="height" id="height" placeholder="мм" value="">
                         </div>
-                        <div class="form-item">
-                            <label for="kolvo">Количество</label>
-                            <input type="number" name="" id="kolvo" placeholder="от 1шт">
-                        </div>
+
                         <div class="form-item">
                             <label for="material">Материал</label>
                             <select id="material" name="material">
@@ -75,12 +99,12 @@ $this->registerCssFile("@web/css/shirokoformatnaya.css", [
                     <div class="additional-form">
                         <div class="luvers-form">
                             <label for="luvers">Кол-во люверсов</label>
-                            <input type="number" name="" id="luvers" placeholder="от 1шт">
+                            <input type="number" name="luvers" id="luvers" placeholder="шт">
                         </div>
                         <div>
                             <div class="prokleika-form">
                                 <span data-toggle="tooltip" data-placement="top">Проклейка периметра</span>
-                                <input type="checkbox" id="prokleika" name="prokleika" value=""/>
+                                <input type="checkbox" id="prokleika" name="prokleika">
                             </div>
                         </div>
                     </div>
@@ -89,18 +113,44 @@ $this->registerCssFile("@web/css/shirokoformatnaya.css", [
                     <span>итог:</span> <span id="result"></span>
                 </div>
             </div>
+            </form>
         </div>
     </div>
     <div class="info-fon">
-
         <div class="info-text container">
             <p>Широкоформатная печать идеально подходит для вывешивания больших рекламных баннеров, наружной установки визиток, календарей, плакатов и т.д. Ее уникальность в том, что она позволяет создавать графические материалы с высокой резкостью и яркостью, что повышает визуальный импакт и привлекает внимание потенциальных клиентов.</p>
         </div>
     </div>
-
 </div>
 </body>
 </html>
+<script>
+    document.getElementById('kolvo')
+        .addEventListener( 'blur',  function(e){
+            calc_sh();
+        } , false );
+    document.getElementById('weight')
+        .addEventListener( 'blur',  function(e){
+            calc_sh();
+        } , false );
+    document.getElementById('height')
+        .addEventListener( 'blur',  function(e){
+            calc_sh();
+        } , false );
+
+    document.getElementById('material')
+        .addEventListener( 'blur',  function(e){
+            calc_sh();
+        } , false );
+    document.getElementById('luvers')
+        .addEventListener( 'blur',  function(e){
+            calc_sh();
+        } , false );
+    document.getElementById('prokleika')
+        .addEventListener('change', function() {
+            calc_sh();
+        });
+</script>
 
 <?php
 $this->registerJsFile(
@@ -111,6 +161,10 @@ $this->registerJsFile(
 <?php
 $this->registerJsFile(
     '@web/js/js.js',
+    ['depends' => [yii\web\JqueryAsset::class]]
+);
+$this->registerJsFile(
+    '@web/js/form.js',
     ['depends' => [yii\web\JqueryAsset::class]]
 );
 ?>

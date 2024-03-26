@@ -30,16 +30,18 @@ $("select").on( "change", function(e) {
 		$('select[name="postprint_perf"]').val('0').prop('disabled', 'disabled');
 		$('select[name="postprint_falc_auto"]').val('0').prop('disabled', 'disabled');
 		$('select[name="postprint_big_hand"]').val('0').prop('disabled', 'disabled');
-		
+		$('select[name="format"] option[value="74-105"], select[name="format"] option[value="105-148"], select[name="format"] option[value="148-210"], select[name="format"] option[value="210-297"], select[name="format"] option[value="297-420"],  select[name="format"] option[value="210-98"], select[name="format"] option[value="150-70"], select[name="format"] option[value="100-70"]').prop('disabled', 'disabled');
+
 		data["param[density]"] = "3"
 		data["param[postprint_perf]"] = "0"
 		data["param[postprint_falc_auto]"] = "0"
 		data["param[postprint_big_hand]"] = "0"
 	}
+
 	
 	if (e.target.name === "part" && e.target.value === "booklets") {
 		$(`select[name="format"] option[value="74-105"], select[name="format"] option[value="210-98"], 
-		   select[name="format"] option[value="100-70"], select[name="format"] option[value="150-70"]`)
+		   select[name="format"] option[value="100-70"], select[name="format"] option[value="90-50"], select[name="format"] option[value="150-70"]`)
 		.prop('disabled', 'disabled');
 		
 		let format = data["param[format]"]
@@ -120,6 +122,7 @@ function newValueOfFormat(format) {
 	if (format === "210-98") return "210*98"
 	if (format === "150-70") return "150*70"
 	if (format === "100-70") return "100*70"
+	if (format === "90-50") return "90*50"
 	
 	return format
 }

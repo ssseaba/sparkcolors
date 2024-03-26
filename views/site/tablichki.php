@@ -41,24 +41,52 @@ $this->registerCssFile("@web/css/tablichki.css", [
                     <div class="ant-carousel-arrow-right"></div>
                     <div class="ant-carousel-dots"></div>
                 </div>
-                <div class="price">
-                    <p>от 900р</p>
-                </div>
-                <div class="calc-but">
-                    <button onclick="calc_tabl()">рассчитать</button>
-                </div>
             </div>
-            <div class="forms">
+            <form action="/site/mail11">
+                <div class="calc-but">
+<!--                    <button>рассчитать</button>-->
+                    <div class="popup-form">
+                        <div >
+                            <button id="openPopup">расчёт</button>
+                            <div id="popupForm" class="popup">
+                                <img src="/img/Vector.png" id="closePopup">
+                                <div action="#" method="post">
+                                    <div class="inputs">
+                                         <label for="name">Имя</label>
+                                         <input type="text" id="name" name="name" required>
+                                    </div>
+                                    <div class="inputs">
+                                         <label for="number">Телефон</label>
+                                         <input type="number" id="number" name="number" required>
+                                    </div>
+                                    <div class="inputs">
+                                         <label for="email">Email</label>
+                                         <input type="email" id="email" name="email" required>
+                                    </div>
+                                    <button id="otpr" type="submit">Отправить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="forms">
                 <div class="form">
                     <div>
                         <div class="form-item">
+                            <label for="kolvo">Количество</label>
+                            <input type="number" name="kolvo" id="kolvo" placeholder="шт">
+                        </div>
+                        <div class="form-item">
                             <label for="weight">Ширина</label>
-                            <input type="number" name="" id="weight" placeholder="от 100мм" value="">
+                            <input type="number" name="weight" id="weight" placeholder="мм" value="">
                         </div>
                         <div class="form-item">
                             <label for="height">высота</label>
-                            <input type="number" name="" id="height" placeholder="от 100мм" value="">
+                            <input type="number" name="height" id="height" placeholder="мм" value="">
                         </div>
+
+                    </div>
+                    <div class="additional-form">
                         <div class="form-item">
                             <label for="material">Материал</label>
                             <select id="material" class="material" name="material">
@@ -72,22 +100,16 @@ $this->registerCssFile("@web/css/tablichki.css", [
                                 <option data-value="" value="5000">ПВХ 10</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="additional-form">
-                        <div class="form-item">
-                            <label for="kolvo">Количество</label>
-                            <input type="number" name="" id="kolvo" placeholder="от 1шт">
-                        </div>
                         <div class="luvers-form">
                             <label for="cvet">цветность</label>
-                            <select id="cvet" class="material" name="material">
+                            <select id="cvet" class="material" name="cvet">
                                 <option value="1">односторонние</option>
                                 <option value="2">двусторонние</option>
                             </select>
                         </div>
                         <div>
                             <div class="prokleika-form">
-                                <input type="checkbox" id="lamina" class="custom-checkbox" name="prokleika" value=""/>
+                                <input type="checkbox" id="lamina" class="custom-checkbox" name="prokleika">
                                 <span data-toggle="tooltip" data-placement="top">Ламинация</span>
                             </div>
                         </div>
@@ -97,6 +119,7 @@ $this->registerCssFile("@web/css/tablichki.css", [
                     <span >итог:</span> <span id="result"></span>
                 </div>
             </div>
+            </form>
         </div>
     </div>
 
@@ -109,6 +132,32 @@ $this->registerCssFile("@web/css/tablichki.css", [
 </div>
 </body>
 </html>
+    <script>
+        document.getElementById('kolvo')
+            .addEventListener( 'blur',  function(e){
+                calc_tabl();
+            } , false );
+        document.getElementById('weight')
+            .addEventListener( 'blur',  function(e){
+                calc_tabl();
+            } , false );
+        document.getElementById('height')
+            .addEventListener( 'blur',  function(e){
+                calc_tabl();
+            } , false );
+        document.getElementById('material')
+            .addEventListener( 'blur',  function(e){
+                calc_tabl();
+            } , false );
+        document.getElementById('cvet')
+            .addEventListener( 'blur',  function(e){
+                calc_tabl();
+            } , false );
+        document.getElementById('lamina')
+            .addEventListener('change', function() {
+                calc_tabl();
+            });
+    </script>
 <?php
 $this->registerJsFile(
     '@web/js/js.js',
@@ -118,6 +167,10 @@ $this->registerJsFile(
 <?php
 $this->registerJsFile(
     '@web/js/calc.js',
+    ['depends' => [yii\web\JqueryAsset::class]]
+);
+$this->registerJsFile(
+    '@web/js/form.js',
     ['depends' => [yii\web\JqueryAsset::class]]
 );
 ?>

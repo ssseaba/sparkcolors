@@ -1,5 +1,7 @@
 <?php
-
+$this->registerCssFile("https://fonts.cdnfonts.com/css/pf-dintext-pro-medium", [
+    'depends' => [yii\bootstrap5\BootstrapAsset::class],
+]);
 /** @var yii\web\View $this */
 /** @var string $content */
 
@@ -25,6 +27,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <head>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -49,6 +52,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                 <a href="/site/mobile-stends">Мобильные стенды и конструкции</a>
                                 <a href="/site/suvenir">Сувенирная продукция</a>
                                 <a href="/site/kompleks">Комплексное рекламное обслуживание</a>
+                                <a class="menu-item" href="/site/contact">Контакты</a>
                             </div>
                         </div>
                     </ul>
@@ -56,12 +60,20 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                 <div class="header container">
                     <div class="head-2 container">
                         <a href="/site/index">
-                            <img src="/img/Logo.png" alt="">
+                            <img class="img-h" src="/img/rrrr.png" alt="">
                         </a>
+
                         <ul class="head-info">
                             <li>info@ultracolors.ru</li>
                             <li>+7 (963) 770-20-77</li>
                         </ul>
+                        <div class=" mobile" id="soc">
+                            <div>
+                                <a href="https://vk.com/spark_colors"><img class="img-v"  src="/img/vk.png" alt="" width="33px"></a>
+                                <a href="https://api.whatsapp.com/send/?phone=79637702077&text&type=phone_number&app_absent=0"><img class="img-w"  src="/img/whats.png" alt="" width="23px"></a>
+                                <a href="https://t.me/thever3/"><img class="img-t"  src="/img/tg.png" alt="" width="23px"></a>
+                            </div>
+                        </div>
                         <div class="menu-2">
                             <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
                             <label for="burger-checkbox" class="burger"></label>
@@ -77,6 +89,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                 <a class="menu-item" href="/site/mobile-stends">Мобильные стенды и конструкции</a>
                                 <a class="menu-item" href="/site/suvenir">Сувенирная продукция</a>
                                 <a class="menu-item" href="/site/kompleks">Комплексное рекламное обслуживание</a>
+                                <a class="menu-item" href="/site/contact">Контакты</a>
                             </ul>
                         </div>
                     </div>
@@ -88,12 +101,22 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                 <div class="header container">
                     <div class="head container">
                         <a href="/site/index">
-                            <img src="/img/Logo.png" alt="">
+                            <img class="img-h"  src="/img/rrrr.png" alt="">
                         </a>
+                        <div class="soc-hd">
+
                         <ul class="head-info">
                             <li>info@ultracolors.ru</li>
                             <li>+7 (963) 770-20-77</li>
                         </ul>
+                            <div class="social-2" id="soc">
+                                <div>
+                                    <a href="https://vk.com/spark_colors"><img class="img-4" src="/img/vk.png" alt="" width="33px"></a>
+                                    <a href="https://api.whatsapp.com/send/?phone=79637702077&text&type=phone_number&app_absent=0"><img class="img-5" src="/img/whats.png" alt="" width="23px"></a>
+                                    <a href="https://t.me/thever3/"><img class="img-6" src="/img/tg.png" alt="" width="23px"></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </header>
@@ -112,12 +135,16 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     <img src="/img/Logo2.png" alt="" width="55px" height="61px">
                     <p>Мы принесем вам успех!</p>
                 </div>
+                <div class="privacy">
+                    <a href="/site/privacy">Политика конфендициальности</a>
+                </div>
                 <div class="inf-soc">
                     <div class="footer-info">
                         <p class="p-3">контакты:</p>
                         <p class="p-4">info@ultracolors.ru <br>
                             +7 (963) 770-20-77</p>
                     </div>
+
                     <div class="social">
                         <p>наши соцсети:</p>
                         <div>
