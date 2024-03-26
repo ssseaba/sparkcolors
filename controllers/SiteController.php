@@ -224,15 +224,15 @@ class SiteController extends Controller
     }
 
     public function actionMail2(){
-        $weight = Yii::$app->request->get('weight');
-        $height = Yii::$app->request->get('height');
-        $kolvo = Yii::$app->request->get('kolvo');
-        $material = Yii::$app->request->get('material');
-        $prokleika = Yii::$app->request->get('prokleika');
-        $name = Yii::$app->request->get('name');
-        $number = Yii::$app->request->get('number');
-        $file = Yii::$app->request->get('file');
-        $price = Yii::$app->request->get('price');
+        $weight = Yii::$app->request->post('weight');
+        $height = Yii::$app->request->post('height');
+        $kolvo = Yii::$app->request->post('kolvo');
+        $material = Yii::$app->request->post('material');
+        $prokleika = Yii::$app->request->post('prokleika');
+        $name = Yii::$app->request->post('name');
+        $number = Yii::$app->request->post('number');
+        $file = Yii::$app->request->post('file');
+        $price = Yii::$app->request->post('price');
         $html = '<table border="1">';
         $html .= '<tr><td>ширина</td><td>'. $weight.'</td>';
         $html .= '<tr><td>высота</td><td>'. $height.'</td>';
@@ -244,13 +244,23 @@ class SiteController extends Controller
         $html .= '<tr><td>файл</td><td>'. $file.'</td>';
         $html .= '<tr><td>цена</td><td>'. $price.'</td>';
         $html .= '</table>';
-        Yii::$app->mailer->compose()
+        $mail = Yii::$app->mailer->compose()
             ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem'])
-            ->setTo('info@ultracolors.ru')
+            ->setTo('sabdullaevaa545@gmail.com')
             ->setSubject("Новая заявка с сайта")
-            ->setHtmlBody($html)
-            ->send();
+            ->setHtmlBody($html);
 
+
+            foreach ($_FILES as $file) {
+                if (!$file["tmp_name"]) continue;
+                $content_file = file_get_contents($file["tmp_name"]);
+
+                $mail->attachContent($content_file, [
+                    'fileName' => $file["name"],
+                    'contentType' => $file["type"]]);
+            }
+
+        $mail->send();
         return $this->redirect(['site/nakleyki']);
     }
 

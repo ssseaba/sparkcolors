@@ -162,6 +162,7 @@ function calc_nakl(){
         count = "Мин. сумма: 600 рублей";
     }
 
+    document.getElementById("price-input").setAttribute("value", count);
     result.innerHTML = count;
 
     document.getElementById("weight").addEventListener("input", calc_nakl);
