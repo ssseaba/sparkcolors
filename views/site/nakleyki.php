@@ -43,7 +43,9 @@ $this->registerCssFile("@web/css/nakleyki.css", [
                 </div>
             </div>
             <div class="forms">
-                <form class="form" action="/site/mail2">
+                <form class="form" enctype="multipart/form-data" method="post"  action="/site/mail2">
+                    <input type="hidden" name="<?= Yii::$app->request->csrfParam; ?>" value="<?= Yii::$app->request->csrfToken; ?>"/>
+                    <input type="hidden" name="price" id="price-input" value=""/>
                     <div class="two-b">
                         <div class="form-item">
                             <label for="kolvo">Количество</label>

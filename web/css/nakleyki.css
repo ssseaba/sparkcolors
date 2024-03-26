@@ -693,7 +693,7 @@ input[type="submit"]:hover {
     }
     .main-fon{
         width: 98%;
-        margin-right: 100px;
+        margin-right: 0px;
         margin-top: 70px;
         height: 100%;
     }
