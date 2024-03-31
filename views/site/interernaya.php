@@ -50,7 +50,9 @@ $this->registerCssFile("@web/css/interernaya.css", [
                         перфорированная пленка</p>
                 </div>
             </div>
-            <form action="/site/mail9">
+            <form action="/site/mail9" method="post">
+                <input type="hidden" name="<?= Yii::$app->request->csrfParam; ?>" value="<?= Yii::$app->request->csrfToken; ?>"/>
+                <input type="hidden" name="price" id="price-input" value=""/>
             <div class="forms">
                 <div class="form">
                     <div>

@@ -12,7 +12,8 @@
                             <button id="openPopup">Написать нам</button>
                             <div id="popupForm" class="popup">
                                 <img src="/img/Vector.png" id="closePopup">
-                                <form action="/site/mail3">
+                                <form action="/site/mail3" method="post">
+                                    <input type="hidden" name="<?= Yii::$app->request->csrfParam; ?>" value="<?= Yii::$app->request->csrfToken; ?>"/>
                                     <label for="name">Имя</label>
                                     <input type="text" id="name" name="name">
                                     <label for="number">Телефон</label>

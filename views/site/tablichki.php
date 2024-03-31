@@ -42,7 +42,9 @@ $this->registerCssFile("@web/css/tablichki.css", [
                     <div class="ant-carousel-dots"></div>
                 </div>
             </div>
-            <form action="/site/mail11">
+            <form action="/site/mail11" method="post">
+                <input type="hidden" name="<?= Yii::$app->request->csrfParam; ?>" value="<?= Yii::$app->request->csrfToken; ?>"/>
+                <input type="hidden" name="price" id="price-input" value=""/>
                 <div class="calc-but">
 <!--                    <button>рассчитать</button>-->
                     <div class="popup-form">
