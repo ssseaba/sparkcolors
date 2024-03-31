@@ -418,21 +418,22 @@ body{
     margin-left: 210px;
 }
 #otpr{
+    color: white;
     height: 30px;
     border-radius: 15px;
     border: 2px solid;
     font-family: Furore;
-    background: none;
+    background: black;
     letter-spacing: 3px;
     cursor: pointer;
 }
 
-#otpr:hover{
-    background-color: black;
-    color: white;
-    border: none;
-    transition: 0.5s;
-}
+/*#otpr:hover{*/
+/*    background-color: black;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    transition: 0.5s;*/
+/*}*/
 
 @media screen and (max-width: 1268px) and (min-width: 425px){
     .info-text{
@@ -498,7 +499,7 @@ body{
         margin-left:-40px;
     }
     .popup{
-        left: 35%;
+        left: 48%;
     }
     .head{
         display: none;

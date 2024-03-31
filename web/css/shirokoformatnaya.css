@@ -317,6 +317,14 @@ span.ant-dot {
     transition: 0.5s;
     border: none;
 }
+#otpr{
+    
+}
+#otpr:hover{
+    background: black;
+
+
+}
 
 .calc-price{
     font-size: 20px;
