@@ -266,9 +266,9 @@ class SiteController extends Controller
 
 
     public function actionMail3(){
-        $name = Yii::$app->request->get('name');
-        $number = Yii::$app->request->get('number');
-        $email = Yii::$app->request->get('email');
+        $name = Yii::$app->request->post('name');
+        $number = Yii::$app->request->post('number');
+        $email = Yii::$app->request->post('email');
         $html = '<table border="1">';
         $html .= '<tr><td>имя</td><td>'. $name.'</td>';
         $html .= '<tr><td>телефон</td><td>'. $number.'</td>';
@@ -276,16 +276,16 @@ class SiteController extends Controller
         $html .= '</table>';
         Yii::$app->mailer->compose()
             ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem/вывески'])
-            ->setTo('info@ultracolors.ru')
+            ->setTo('sabdullaevaa545@gmail.com')
             ->setSubject("Новая заявка с сайта")
             ->setHtmlBody($html)
             ->send();
         return $this->redirect(['site/viveski']);
     }
     public function actionMail4(){
-        $name = Yii::$app->request->get('name');
-        $number = Yii::$app->request->get('number');
-        $email = Yii::$app->request->get('email');
+        $name = Yii::$app->request->post('name');
+        $number = Yii::$app->request->post('number');
+        $email = Yii::$app->request->post('email');
         $html = '<table border="1">';
         $html .= '<tr><td>имя</td><td>'. $name.'</td>';
         $html .= '<tr><td>телефон</td><td>'. $number.'</td>';
@@ -293,16 +293,16 @@ class SiteController extends Controller
         $html .= '</table>';
         Yii::$app->mailer->compose()
             ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem/печати и штапмы'])
-            ->setTo('info@ultracolors.ru')
+            ->setTo('sabdullaevaa545@gmail.com')
             ->setSubject("Новая заявка с сайта")
             ->setHtmlBody($html)
             ->send();
         return $this->redirect(['site/pechati']);
     }
     public function actionMail5(){
-        $name = Yii::$app->request->get('name');
-        $number = Yii::$app->request->get('number');
-        $email = Yii::$app->request->get('email');
+        $name = Yii::$app->request->post('name');
+        $number = Yii::$app->request->post('number');
+        $email = Yii::$app->request->post('email');
         $html = '<table border="1">';
         $html .= '<tr><td>имя</td><td>'. $name.'</td>';
         $html .= '<tr><td>телефон</td><td>'. $number.'</td>';
@@ -310,16 +310,16 @@ class SiteController extends Controller
         $html .= '</table>';
         Yii::$app->mailer->compose()
             ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem/услуги дизайна'])
-            ->setTo('info@ultracolors.ru')
+            ->setTo('sabdullaevaa545@gmail.com')
             ->setSubject("Новая заявка с сайта")
             ->setHtmlBody($html)
             ->send();
         return $this->redirect(['site/uslugi-des']);
     }
     public function actionMail6(){
-        $name = Yii::$app->request->get('name');
-        $number = Yii::$app->request->get('number');
-        $email = Yii::$app->request->get('email');
+        $name = Yii::$app->request->post('name');
+        $number = Yii::$app->request->post('number');
+        $email = Yii::$app->request->post('email');
         $html = '<table border="1">';
         $html .= '<tr><td>имя</td><td>'. $name.'</td>';
         $html .= '<tr><td>телефон</td><td>'. $number.'</td>';
@@ -327,16 +327,16 @@ class SiteController extends Controller
         $html .= '</table>';
         Yii::$app->mailer->compose()
             ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem/мобильные стенды и конструкции'])
-            ->setTo('info@ultracolors.ru')
+            ->setTo('sabdullaevaa545@gmail.com')
             ->setSubject("Новая заявка с сайта")
             ->setHtmlBody($html)
             ->send();
         return $this->redirect(['site/mobile-stends']);
     }
     public function actionMail7(){
-        $name = Yii::$app->request->get('name');
-        $number = Yii::$app->request->get('number');
-        $email = Yii::$app->request->get('email');
+        $name = Yii::$app->request->post('name');
+        $number = Yii::$app->request->post('number');
+        $email = Yii::$app->request->post('email');
         $html = '<table border="1">';
         $html .= '<tr><td>имя</td><td>'. $name.'</td>';
         $html .= '<tr><td>телефон</td><td>'. $number.'</td>';
@@ -351,9 +351,9 @@ class SiteController extends Controller
         return $this->redirect(['site/suvenir']);
     }
     public function actionMail8(){
-        $name = Yii::$app->request->get('name');
-        $number = Yii::$app->request->get('number');
-        $email = Yii::$app->request->get('email');
+        $name = Yii::$app->request->post('name');
+        $number = Yii::$app->request->post('number');
+        $email = Yii::$app->request->post('email');
         $html = '<table border="1">';
         $html .= '<tr><td>имя</td><td>'. $name.'</td>';
         $html .= '<tr><td>телефон</td><td>'. $number.'</td>';
@@ -361,7 +361,7 @@ class SiteController extends Controller
         $html .= '</table>';
         Yii::$app->mailer->compose()
             ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem/комплексное рекламное обслуживание'])
-            ->setTo('info@ultracolors.ru')
+            ->setTo('sabdullaevaa545@gmail.com')
             ->setSubject("Новая заявка с сайта")
             ->setHtmlBody($html)
             ->send();
@@ -369,17 +369,17 @@ class SiteController extends Controller
     }
 
     public function actionMail9(){
-        $kolvo = yii::$app->request->get('kolvo');
-        $weight = Yii::$app->request->get('weight');
-        $height = Yii::$app->request->get('height');
-        $material = Yii::$app->request->get('material');
-        $luvers = Yii::$app->request->get('luvers');
-        $prokleika = Yii::$app->request->get('prokleika');
-        $obrez = Yii::$app->request->get('obrez');
-        $name = Yii::$app->request->get('name');
-        $number = Yii::$app->request->get('number');
-        $email = Yii::$app->request->get('email');
-        $result = Yii::$app->request->get('result');
+        $kolvo = yii::$app->request->post('kolvo');
+        $weight = Yii::$app->request->post('weight');
+        $height = Yii::$app->request->post('height');
+        $material = Yii::$app->request->post('material');
+        $luvers = Yii::$app->request->post('luvers');
+        $prokleika = Yii::$app->request->post('prokleika');
+        $obrez = Yii::$app->request->post('obrez');
+        $name = Yii::$app->request->post('name');
+        $number = Yii::$app->request->post('number');
+        $email = Yii::$app->request->post('email');
+        $price = Yii::$app->request->post('price');
         $html = '<table border="1">';
         $html .= '<tr><td>количество</td><td>'. $kolvo.'</td>';
         $html .= '<tr><td>ширина</td><td>'. $weight.'</td>';
@@ -391,16 +391,16 @@ class SiteController extends Controller
         $html .= '<tr><td>имя</td><td>'. $name.'</td>';
         $html .= '<tr><td>телефон</td><td>'. $number.'</td>';
         $html .= '<tr><td>email</td><td>'. $email.'</td>';
-        $html .= '<tr><td>цена</td><td>'. $result.'</td>';
+        $html .= '<tr><td>цена</td><td>'. $price .'</td>';
         $html .= '</table>';
         if ($prokleika -> checked) {
-            $to = 'info@ultracolors.ru';
+            $to = 'sabdullaevaa545@gmail.com';
             $subject = 'Данные о проклейке периметра';
             $message = 'Проклейка периметра была выбрана в форме.';
             mail($to, $subject, $message);
         }
         if ($obrez -> checked) {
-            $to = 'info@ultracolors.ru';
+            $to = 'sabdullaevaa545@gmail.com';
             $subject = 'Данные о обрезе';
             $message = 'Обрез был выбран в форме.';
             mail($to, $subject, $message);
@@ -408,23 +408,23 @@ class SiteController extends Controller
 
         Yii::$app->mailer->compose()
             ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem'])
-            ->setTo('info@ultracolors.ru')
+            ->setTo('sabdullaevaa545@gmail.com')
             ->setSubject("Новая заявка с сайта")
             ->setHtmlBody($html)
             ->send();
         return $this->redirect(['site/interernaya']);
     }
     public function actionMail10(){
-        $kolvo = yii::$app->request->get('kolvo');
-        $weight = Yii::$app->request->get('weight');
-        $height = Yii::$app->request->get('height');
-        $material = Yii::$app->request->get('material');
-        $luvers = Yii::$app->request->get('luvers');
-        $prokleika = Yii::$app->request->get('prokleika');
-        $name = Yii::$app->request->get('name');
-        $number = Yii::$app->request->get('number');
-        $email = Yii::$app->request->get('email');
-        $result = Yii::$app->request->get('result');
+        $kolvo = yii::$app->request->post('kolvo');
+        $weight = Yii::$app->request->post('weight');
+        $height = Yii::$app->request->post('height');
+        $material = Yii::$app->request->post('material');
+        $luvers = Yii::$app->request->post('luvers');
+        $prokleika = Yii::$app->request->post('prokleika');
+        $name = Yii::$app->request->post('name');
+        $number = Yii::$app->request->post('number');
+        $email = Yii::$app->request->post('email');
+        $price = Yii::$app->request->post('price');
         $html = '<table border="1">';
         $html .= '<tr><td>количество</td><td>'. $kolvo.'</td>';
         $html .= '<tr><td>ширина</td><td>'. $weight.'</td>';
@@ -435,10 +435,10 @@ class SiteController extends Controller
         $html .= '<tr><td>имя</td><td>'. $name.'</td>';
         $html .= '<tr><td>телефон</td><td>'. $number.'</td>';
         $html .= '<tr><td>email</td><td>'. $email.'</td>';
-        $html .= '<tr><td>цена</td><td>'. $result.'</td>';
+        $html .= '<tr><td>цена</td><td>'. $price.'</td>';
         $html .= '</table>';
         if ($prokleika -> checked) {
-            $to = 'info@ultracolors.ru';
+            $to = 'sabdullaevaa545@gmail.com';
             $subject = 'Данные о проклейке периметра';
             $message = 'Проклейка периметра была выбрана в форме.';
             mail($to, $subject, $message);
@@ -446,23 +446,23 @@ class SiteController extends Controller
 
         Yii::$app->mailer->compose()
             ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem'])
-            ->setTo('info@ultracolors.ru')
+            ->setTo('sabdullaevaa545@gmail.com')
             ->setSubject("Новая заявка с сайта")
             ->setHtmlBody($html)
             ->send();
         return $this->redirect(['site/shirokoformatnaya']);
     }
     public function actionMail11(){
-        $kolvo = yii::$app->request->get('kolvo');
-        $weight = Yii::$app->request->get('weight');
-        $height = Yii::$app->request->get('height');
-        $material = Yii::$app->request->get('material');
-        $cvet = Yii::$app->request->get('cvet');
-        $prokleika  = Yii::$app->request->get('prokleika');
-        $name = Yii::$app->request->get('name');
-        $number = Yii::$app->request->get('number');
-        $email = Yii::$app->request->get('email');
-        $result = Yii::$app->request->get('result');
+        $kolvo = yii::$app->request->post('kolvo');
+        $weight = Yii::$app->request->post('weight');
+        $height = Yii::$app->request->post('height');
+        $material = Yii::$app->request->post('material');
+        $cvet = Yii::$app->request->post('cvet');
+        $prokleika  = Yii::$app->request->post('prokleika');
+        $name = Yii::$app->request->post('name');
+        $number = Yii::$app->request->post('number');
+        $email = Yii::$app->request->post('email');
+        $price = Yii::$app->request->post('price');
         $html = '<table border="1">';
         $html .= '<tr><td>количество</td><td>'. $kolvo.'</td>';
         $html .= '<tr><td>ширина</td><td>'. $weight.'</td>';
@@ -473,10 +473,10 @@ class SiteController extends Controller
         $html .= '<tr><td>имя</td><td>'. $name.'</td>';
         $html .= '<tr><td>телефон</td><td>'. $number.'</td>';
         $html .= '<tr><td>email</td><td>'. $email.'</td>';
-        $html .= '<tr><td>цена</td><td>'. $result.'</td>';
+        $html .= '<tr><td>цена</td><td>'. $price.'</td>';
         $html .= '</table>';
         if ($prokleika -> checked) {
-            $to = 'info@ultracolors.ru';
+            $to = 'sabdullaevaa545@gmail.com';
             $subject = 'Данные о проклейке периметра';
             $message = 'Проклейка периметра была выбрана в форме.';
             mail($to, $subject, $message);
@@ -485,7 +485,7 @@ class SiteController extends Controller
 
         Yii::$app->mailer->compose()
             ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem/таблички'])
-            ->setTo('info@ultracolors.ru')
+            ->setTo('sabdullaevaa545@gmail.com')
             ->setSubject("Новая заявка с сайта")
             ->setHtmlBody($html)
             ->send();

@@ -90,7 +90,9 @@ a.desc:after {
         margin-top:-3px;
         margin-left: -30px;
     }
-
+    /*.main-fon{*/
+    /*    margin-right: 0px;*/
+    /*}*/
     .head-info li{
         display: none;
     }

@@ -22,6 +22,8 @@ function calc_sh(){
     } else {
         prokleika = "no";
     }
+
+    document.getElementById("price-input").setAttribute("value", count);
     result.innerHTML = count;
 
 
@@ -58,6 +60,7 @@ function calc_tabl(){
         count = "Мин. сумма: 600 рублей";
     }
 
+    document.getElementById("price-input").setAttribute("value", count);
     result.innerHTML = count;
 
     document.getElementById("weight").addEventListener("input", calc_tabl);
@@ -104,6 +107,9 @@ function calc_int(){
         if (count < 600) {
             count = "Мин. сумма: 600 рублей";
         }
+
+        document.getElementById("price-input").setAttribute("value", count);
+
 
         console.log(prokleika)
         result.innerHTML = count;

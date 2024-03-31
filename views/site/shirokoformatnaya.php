@@ -46,7 +46,10 @@ $this->registerCssFile("@web/css/shirokoformatnaya.css", [
                         пленка</p>
                 </div>
             </div>
-            <form action="/site/mail10">
+            <form action="/site/mail10" method="post">
+                <input type="hidden" name="<?= Yii::$app->request->csrfParam; ?>" value="<?= Yii::$app->request->csrfToken; ?>"/>
+                <input type="hidden" name="price" id="price-input" value=""/>
+
                 <div class="calc-but">
                     <div class="popup-form">
                         <div >
