@@ -155,19 +155,7 @@ Ant.initialize = function(that) {
 		that.leftArrow.style.display = 'none'; that.rightArrow.style.display = 'none'
 	};
 
-	if(!that.options.loop) {     
-		that.dotsVisible = that.elemCount - that.options.elemVisible + 1;
-		that.leftArrow.style.display = 'none';  
-		that.touchPrev = false;    
-		that.options.auto = false; 
-	}
-	else if(that.options.auto) {  
-		setAutoScroll();
-		that.crslList.addEventListener('mouseenter', function() {
-    	clearInterval(that.autoScroll)
-    }, false);
-		that.crslList.addEventListener('mouseleave', setAutoScroll, false)
-	};
+
 
 	if(that.options.touch) {  
 		that.crslList.addEventListener('touchstart', function(e) {

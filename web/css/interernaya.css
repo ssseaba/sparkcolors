@@ -666,10 +666,10 @@ input[type="number"] {
     }
     .price{
         width: 100%;
-        margin-left: 20px;
+        margin-left: 1px;
     }
     .ant-carousel{
-        margin-left: 20px;
+
     }
 
     .img-1{
