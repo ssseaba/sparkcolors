@@ -497,6 +497,16 @@ body{
     #openPopup{
         width: 60%;
     }
+    #otpr{
+        height: 30px;
+        border-radius: 15px;
+        border: none;
+        font-family: Furore;
+        background: black;
+        color: white;
+        letter-spacing: 3px;
+        cursor: pointer;
+    }
     .p2-1{
         width: 60%;
         margin-left: 65px;
@@ -505,7 +515,7 @@ body{
         margin-left:-40px;
     }
     .popup{
-        left: 35%;
+        left: 45%;
     }
     .head{
         display: none;

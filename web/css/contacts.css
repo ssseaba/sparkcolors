@@ -270,6 +270,12 @@ iframe{
     .head{
         display: none;
     }
+    .contact{
+        margin-top: 40px;
+    }
+    .about-con p{
+        line-height: 0;
+    }
     .menu-2{
         display: block;
         margin-top: 11px;
