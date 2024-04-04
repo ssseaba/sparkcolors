@@ -246,7 +246,7 @@ class SiteController extends Controller
         $html .= '</table>';
         $mail = Yii::$app->mailer->compose()
             ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem'])
-            ->setTo('sabdullaevaa545@gmail.com')
+            ->setTo('info@ultracolors.ru')
             ->setSubject("Новая заявка с сайта")
             ->setHtmlBody($html);
 
@@ -276,7 +276,7 @@ class SiteController extends Controller
         $html .= '</table>';
         Yii::$app->mailer->compose()
             ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem/вывески'])
-            ->setTo('sabdullaevaa545@gmail.com')
+            ->setTo('info@ultracolors.ru')
             ->setSubject("Новая заявка с сайта")
             ->setHtmlBody($html)
             ->send();
@@ -293,7 +293,7 @@ class SiteController extends Controller
         $html .= '</table>';
         Yii::$app->mailer->compose()
             ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem/печати и штапмы'])
-            ->setTo('sabdullaevaa545@gmail.com')
+            ->setTo('info@ultracolors.ru')
             ->setSubject("Новая заявка с сайта")
             ->setHtmlBody($html)
             ->send();
@@ -310,7 +310,7 @@ class SiteController extends Controller
         $html .= '</table>';
         Yii::$app->mailer->compose()
             ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem/услуги дизайна'])
-            ->setTo('sabdullaevaa545@gmail.com')
+            ->setTo('info@ultracolors.ru')
             ->setSubject("Новая заявка с сайта")
             ->setHtmlBody($html)
             ->send();
@@ -327,7 +327,7 @@ class SiteController extends Controller
         $html .= '</table>';
         Yii::$app->mailer->compose()
             ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem/мобильные стенды и конструкции'])
-            ->setTo('sabdullaevaa545@gmail.com')
+            ->setTo('info@ultracolors.ru')
             ->setSubject("Новая заявка с сайта")
             ->setHtmlBody($html)
             ->send();
@@ -344,7 +344,7 @@ class SiteController extends Controller
         $html .= '</table>';
         Yii::$app->mailer->compose()
             ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem/сувенирная продукция'])
-            ->setTo('sabdullaevaa545@gmail.com')
+            ->setTo('info@ultracolors.ru')
             ->setSubject("Новая заявка с сайта")
             ->setHtmlBody($html)
             ->send();
@@ -361,7 +361,7 @@ class SiteController extends Controller
         $html .= '</table>';
         Yii::$app->mailer->compose()
             ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem/комплексное рекламное обслуживание'])
-            ->setTo('sabdullaevaa545@gmail.com')
+            ->setTo('info@ultracolors.ru')
             ->setSubject("Новая заявка с сайта")
             ->setHtmlBody($html)
             ->send();
@@ -394,13 +394,13 @@ class SiteController extends Controller
         $html .= '<tr><td>цена</td><td>'. $price .'</td>';
         $html .= '</table>';
         if ($prokleika -> checked) {
-            $to = 'sabdullaevaa545@gmail.com';
+            $to = 'info@ultracolors.ru';
             $subject = 'Данные о проклейке периметра';
             $message = 'Проклейка периметра была выбрана в форме.';
             mail($to, $subject, $message);
         }
         if ($obrez -> checked) {
-            $to = 'sabdullaevaa545@gmail.com';
+            $to = 'info@ultracolors.ru';
             $subject = 'Данные о обрезе';
             $message = 'Обрез был выбран в форме.';
             mail($to, $subject, $message);
@@ -408,7 +408,7 @@ class SiteController extends Controller
 
         Yii::$app->mailer->compose()
             ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem'])
-            ->setTo('sabdullaevaa545@gmail.com')
+            ->setTo('info@ultracolors.ru')
             ->setSubject("Новая заявка с сайта")
             ->setHtmlBody($html)
             ->send();
@@ -438,7 +438,7 @@ class SiteController extends Controller
         $html .= '<tr><td>цена</td><td>'. $price.'</td>';
         $html .= '</table>';
         if ($prokleika -> checked) {
-            $to = 'sabdullaevaa545@gmail.com';
+            $to = 'info@ultracolors.ru';
             $subject = 'Данные о проклейке периметра';
             $message = 'Проклейка периметра была выбрана в форме.';
             mail($to, $subject, $message);
@@ -446,7 +446,7 @@ class SiteController extends Controller
 
         Yii::$app->mailer->compose()
             ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem'])
-            ->setTo('sabdullaevaa545@gmail.com')
+            ->setTo('info@ultracolors.ru')
             ->setSubject("Новая заявка с сайта")
             ->setHtmlBody($html)
             ->send();
@@ -476,7 +476,7 @@ class SiteController extends Controller
         $html .= '<tr><td>цена</td><td>'. $price.'</td>';
         $html .= '</table>';
         if ($prokleika -> checked) {
-            $to = 'sabdullaevaa545@gmail.com';
+            $to = 'info@ultracolors.ru';
             $subject = 'Данные о проклейке периметра';
             $message = 'Проклейка периметра была выбрана в форме.';
             mail($to, $subject, $message);
@@ -485,7 +485,7 @@ class SiteController extends Controller
 
         Yii::$app->mailer->compose()
             ->setFrom(['dev@ateplykh.ru' => 'Новая заявка с сайта pestsystem/таблички'])
-            ->setTo('sabdullaevaa545@gmail.com')
+            ->setTo('info@ultracolors.ru')
             ->setSubject("Новая заявка с сайта")
             ->setHtmlBody($html)
             ->send();

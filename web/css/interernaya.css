@@ -599,6 +599,14 @@ input[type="number"] {
     .head{
         display: none;
     }
+    #otpr{
+        background-color: black;
+        color: white;
+        border: none;
+    }
+    #otpr:hover{
+        border: none;
+    }
 
     .menu-2{
         display: block;

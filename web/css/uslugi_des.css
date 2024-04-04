@@ -496,6 +496,16 @@ body{
         width: 70%;
         margin-left: 20px;
     }
+    #otpr{
+        height: 30px;
+        border-radius: 15px;
+        border: none;
+        font-family: Furore;
+        background: black;
+        color: white;
+        letter-spacing: 3px;
+        cursor: pointer;
+    }
     .head{
         display: none;
     }
