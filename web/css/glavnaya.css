@@ -10,18 +10,19 @@ body {
     background-size: cover;
 }
 
-/*.container {*/
-/*    width: 1250px;*/
-/*    margin: 0 auto;*/
-/*}*/
+.container {
+    width: 1316px;
+    margin: 0 auto;
+}
 
 .header {
     background-color: rgba(253, 251, 251, 0.50);
     border-radius: 0px 0px 15px 15px;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-    width: 1440px;
-    margin-left: 10px;
+    width: 1416px;
 }
+
+
 
 .head {
     display: flex;
@@ -53,7 +54,6 @@ body {
     padding-bottom: 30px;
     margin-top: 40px;
     border-radius: 15px;
-    margin-left: 60px;
 }
 
 .menu {
@@ -121,10 +121,9 @@ body {
 
 .footer-fon {
     background-color: rgba(253, 251, 251, 0.50);
-    width: 1440px;
     border-radius: 15px 15px 0px 0px;
     box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.5);
-    margin-left: 10px;
+    width: 1416px;
 }
 
 .social p {
