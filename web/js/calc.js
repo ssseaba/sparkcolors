@@ -23,9 +23,9 @@ function calc_sh(){
         prokleika = "no";
     }
 
-    document.getElementById("price-input").setAttribute("value", count);
-    result.innerHTML = count;
 
+    document.getElementById("price-input").setAttribute("value", count);
+    result.innerHTML = count.toFixed(0);
 
     document.getElementById("weight").addEventListener("input", calc_sh);
     document.getElementById("height").addEventListener("input", calc_sh);
