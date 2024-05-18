@@ -13,9 +13,10 @@ function calc_sh(){
     if (prokleika){
         count += (weight * 2 + height * 2)/ 1000 * 20 * kolvo;
     }
-
     if (count < 600) {
         count = "Мин. сумма: 600 рублей";
+    } else {
+        count = parseFloat(count).toFixed(0);
     }
     if (prokleika.checked) {
         prokleika = "yes";
@@ -23,10 +24,10 @@ function calc_sh(){
         prokleika = "no";
     }
 
+    document.getElementById("price-input").setAttribute("value", count);
+    result.innerHTML = count;
 
     document.getElementById("price-input").setAttribute("value", count);
-    result.innerHTML = count.toFixed(0);
-
     document.getElementById("weight").addEventListener("input", calc_sh);
     document.getElementById("height").addEventListener("input", calc_sh);
     document.getElementById("material").addEventListener("input", calc_sh);
@@ -36,7 +37,7 @@ function calc_sh(){
 }
 
 
-function calc_tabl(){
+function calc_tabl() {
     var weight = document.getElementById("weight").value;
     var height = document.getElementById("height").value;
     var material = document.getElementById("material").value;
@@ -49,15 +50,17 @@ function calc_tabl(){
     count = parseInt(material) + 800;
     count = count * (weight / 1000) * (height / 1000) * kolvo;
 
-    if (lamina){
+    if (lamina) {
         count = count + count * 0.3;
     }
-    if (cvet == 2){
+    if (cvet == 2) {
         count = count + count * 0.3;
     }
 
     if (count < 600) {
         count = "Мин. сумма: 600 рублей";
+    } else {
+        count = parseFloat(count).toFixed(0);
     }
 
     document.getElementById("price-input").setAttribute("value", count);
@@ -106,10 +109,11 @@ function calc_int(){
 
         if (count < 600) {
             count = "Мин. сумма: 600 рублей";
+        } else {
+            count = parseFloat(count).toFixed(0);
         }
 
         document.getElementById("price-input").setAttribute("value", count);
-
 
         console.log(prokleika)
         result.innerHTML = count;
@@ -166,8 +170,9 @@ function calc_nakl(){
 
     if (count < 600) {
         count = "Мин. сумма: 600 рублей";
+    } else {
+        count = parseFloat(count).toFixed(0);
     }
-
     document.getElementById("price-input").setAttribute("value", count);
     result.innerHTML = count;
 

@@ -67,7 +67,7 @@ $this->registerCssFile("@web/css/nakleyki.css", [
                             </select>
                         </div>
                         <div class="pec-form"style="margin-top: 30px ">
-                            <input type="checkbox" id="obrezka" name="prokleika" value="no" checked>
+                            <input type="checkbox" id="obrezka" name="prokleika" value="no">
                             <span id="obrezka-s" data-toggle="tooltip" data-placement="top">обрезка</span>
                         </div>
 
